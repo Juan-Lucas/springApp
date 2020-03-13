@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gestionnaire d'etudiants</h1>
+        <h4>
+            <a th:href="@{add}">Ajout d'un etudiant</a>
+        </h4>
+        <table class="table table-striped">
+            <tr>
+                <th>Nom</th>
+                <th>Post-nom</th>
+                <th>Prenom</th>
+                <th>Matricule</th>
+            </tr>
+            <tr th:each="etudiant:${etudiants}">
+                <td th:text="${etudiant.nom}"></td>
+                <td th:text="${etudiant.postnom}"></td>
+                <td th:text="${etudiant.prenom}"></td>
+                <td th:text="${etudiant.matricule}"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
